@@ -30,10 +30,7 @@ def run():
                 'droprate': state.get('pop_ping_drop_rate', 0.0),
                 'downlink_throughput': state.get('downlink_throughput_bps', 0.0),
                 'uplink_throughput': state.get('uplink_throughput_bps', 0.0),
-                'gps_stats': state.get('gps_stats', 0.0),
-                'user_latitude': state.get('latitude', 0.0),
-                'user_longitude': state.get('longitude', 0.0),
-                'user_altitude': state.get('altitude', 0.0)
+                'gps_sats': state.get('gps_sats', 0.0),
             }
         except RpcError as e:
             return {
@@ -53,10 +50,7 @@ def run():
             print(f"DROP RATE:             {tester['droprate'] * 100:.2f} %")
             print(f"DOWNLINK THROUGHPUT:   {tester['downlink_throughput'] / 1e6:.2f} Mbps")
             print(f"UPLINK THROUGHPUT:     {tester['uplink_throughput'] / 1e6:.2f} Mbps\n------------------------------")
-            print(f"USER LATITDE:          {tester['user_latitude']} degrees")
-            print(f"USER LONGITUDE:        {tester['user_longitude']} degrees")
-            print(f"USER ALTITUDE:         {tester['user_altitude']} meters")
-            print(f"NUMBER OF SATELLITES:  {tester['gps_stats']}\n------------------------------")
+            print(f"NUMBER OF SATELLITES:  {tester['gps_sats']}\n------------------------------")
 
     try: 
         while True:
@@ -66,7 +60,4 @@ def run():
         print("-------------------\nExperiment ended")
 
 if __name__ == '__main__':
-    if gps_enabled:
         run()
-    else:
-        print("ERROR: GPS Inactive")
