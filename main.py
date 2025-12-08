@@ -8,6 +8,9 @@ import starlink_grpc
 from grpc import RpcError
 
 def run():
+    status_data = starlink_grpc.status_data('192.168.100.1')
+    state = status_data.get('state', {})
+    
     while True:
         try:
             sec_update = int(input("Update experiment every __ second(s)."))
@@ -19,8 +22,6 @@ def run():
     
     def get_stats(): 
         try: 
-            status_data = starlink_grpc.status_data('192.168.100.1')
-            state = status_data.get('state', {})
             return {
                 'id': state.get('id', 'N/A'),
                 'hardware': state.get('hardware_version', 'N/A'),
