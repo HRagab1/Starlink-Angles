@@ -57,7 +57,7 @@ def run():
             print_stats(get_stats())
             time.sleep(sec_update)
     except KeyboardInterrupt:
-        print("-------------------\nExperiment ended")
+        print("-------------------\nExperiment ended\n-------------------")
 
 if __name__ == '__main__':
         run()
