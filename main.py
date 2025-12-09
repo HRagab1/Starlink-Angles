@@ -52,6 +52,22 @@ def run():
             print(f"UPLINK THROUGHPUT:     {tester['uplink_throughput'] / 1e6:.2f} Mbps\n------------------------------")
             print(f"NUMBER OF SATELLITES:  {tester['gps_sats']}\n------------------------------")
 
+"""
+    def print_stats():
+        try: 
+            print(f"Test Results:")
+            print(f"DEVICE ID:             {state.get('id', 'N/A')}")
+            print(f"HARDWARE:              {state.get('hardware_version', 'N/A')}")
+            print(f"SOFTWARE:              {state.get('software_version', 'N/A')}")
+            print(f"LATENCY:               {state.get('pop_ping_latency_ms', 0.0):.2f} ms")
+            print(f"DROP RATE:             {state.get('pop_ping_drop_rate', 0.0) * 100:.2f} %")
+            print(f"DOWNLINK THROUGHPUT:   {state.get('downlink_throughput_bps', 0.0) / 1e6:.2f} Mbps")
+            print(f"UPLINK THROUGHPUT:     {state.get('uplink_throughput_bps', 0.0) / 1e6:.2f} Mbps\n------------------------------")
+            print(f"NUMBER OF SATELLITES:  {state.get('gps_sats', 0.0)}\n------------------------------")
+        except RpcError as e:
+            print(str(e))
+"""
+
     try: 
         while True:
             print_stats(get_stats())
