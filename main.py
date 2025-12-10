@@ -37,7 +37,7 @@ if __name__ == '__main__':
             status_data = starlink_grpc.status_data('192.168.100.1')
             state = status_data.get('state', {})
             info = status_data.get('device_info', {})
-            if(state.get('gps_enabled', False))
+            if state.get('gps_enabled', False):
                 print_stats(state, info)
                 time.sleep(sec_update)
             else:
