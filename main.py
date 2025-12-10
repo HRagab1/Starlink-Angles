@@ -42,7 +42,7 @@ if __name__ == '__main__':
         print(f"UNEXPECTED ERROR: {e}")
         sys.exit(0)
 
-    #User's Update Interval
+    #User's Interval Update
     while True:
         try:
             sec_update = int(input("Update experiment every __ second(s): "))
