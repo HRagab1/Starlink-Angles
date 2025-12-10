@@ -14,7 +14,7 @@ def print_stats():
 
         #Prints Info
         print("Test Results:")
-        print(f"TIME:                  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"TIME:                  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n------------------------------")
         print(f"DEVICE ID:             {info.get('id', 'N/A')}")
         print(f"HARDWARE:              {info.get('hardware_version', 'N/A')}")
         print(f"SOFTWARE:              {info.get('software_version', 'N/A')}")
@@ -58,4 +58,4 @@ if __name__ == '__main__':
             print_stats()
             time.sleep(sec_update)
     except KeyboardInterrupt:
-        print("-------------------\nExperiment ended\n-------------------")
+        print("------------------------------\nExperiment ended\n------------------------------")
