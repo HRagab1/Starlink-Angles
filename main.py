@@ -39,6 +39,7 @@ def run():
         }
         
     def print_stats(tester):
+        print("TEST RESULTS:")
         if 'error' in tester:
             print(tester['error'])
         else:
@@ -50,7 +51,7 @@ def run():
             print(f"DROP RATE:             {tester['droprate'] * 100:.2f} %")
             print(f"DOWNLINK THROUGHPUT:   {tester['downlink_throughput'] / 1e6:.2f} Mbps")
             print(f"UPLINK THROUGHPUT:     {tester['uplink_throughput'] / 1e6:.2f} Mbps\n------------------------------")
-            print(f"NUMBER OF SATELLITES:  {tester['gps_sats']}\n------------------------------")
+            print(f"NUMBER OF SATELLITES:  {tester['gps_sats']:.2f}\n------------------------------")
 
 """
     def print_stats():
@@ -63,7 +64,7 @@ def run():
             print(f"DROP RATE:             {state.get('pop_ping_drop_rate', 0.0) * 100:.2f} %")
             print(f"DOWNLINK THROUGHPUT:   {state.get('downlink_throughput_bps', 0.0) / 1e6:.2f} Mbps")
             print(f"UPLINK THROUGHPUT:     {state.get('uplink_throughput_bps', 0.0) / 1e6:.2f} Mbps\n------------------------------")
-            print(f"NUMBER OF SATELLITES:  {state.get('gps_sats', 0.0)}\n------------------------------")
+            print(f"NUMBER OF SATELLITES:  {state.get('gps_sats', 0.0):.2f}\n------------------------------")
         except RpcError as e:
             print(str(e))
 """
