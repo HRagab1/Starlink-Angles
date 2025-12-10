@@ -1,7 +1,3 @@
-import importlib.util
-import sys
-import os
-import socket
 import time
 import starlink_grpc
 from grpc import RpcError
