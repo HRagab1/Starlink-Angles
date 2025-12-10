@@ -3,12 +3,8 @@ import starlink_grpc
 from grpc import RpcError
 from datetime import datetime
 
-def print_stats():
-    try: 
-        status_data = starlink_grpc.status_data('192.168.100.1')
-        state = status_data.get('state', {})
-        info = status_data.get('device_info', {})
-        
+def print_stats(state, info):
+    try:        
         print("Test Results:")
         print(f"TIME:                  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print(f"DEVICE ID:             {info.get('id', 'N/A')}")
@@ -38,7 +34,14 @@ if __name__ == '__main__':
     
     try: 
         while True:
-            print_stats()
-            time.sleep(sec_update)
+            status_data = starlink_grpc.status_data('192.168.100.1')
+            state = status_data.get('state', {})
+            info = status_data.get('device_info', {})
+            if(state.get('gps_enabled', False))
+                print_stats(state, info)
+                time.sleep(sec_update)
+            else:
+                print("ERROR: GPS NOT ENABLED")
+                break
     except KeyboardInterrupt:
         print("-------------------\nExperiment ended\n-------------------")
