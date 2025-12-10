@@ -1,7 +1,7 @@
 import time
+from datetime import datetime
 import starlink_grpc
 from grpc import RpcError
-from datetime import datetime
 import sys
 
 #Prints Status
