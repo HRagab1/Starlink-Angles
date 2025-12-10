@@ -10,7 +10,7 @@ def print_stats():
         info = status_data.get('device_info', {})
         
         print("Test Results:")
-        print(f"TIME:                  {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}")
+        print(f"TIME:                  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print(f"DEVICE ID:             {info.get('id', 'N/A')}")
         print(f"HARDWARE:              {info.get('hardware_version', 'N/A')}")
         print(f"SOFTWARE:              {info.get('software_version', 'N/A')}")
