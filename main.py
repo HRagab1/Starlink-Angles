@@ -19,8 +19,8 @@ def print_stats():
         print(f"DROP RATE:             {state.get('pop_ping_drop_rate', 0.0) * 100:.2f} %")
         print(f"DOWNLINK THROUGHPUT:   {state.get('downlink_throughput_bps', 0.0) / 1e6:.2f} Mbps")
         print(f"UPLINK THROUGHPUT:     {state.get('uplink_throughput_bps', 0.0) / 1e6:.2f} Mbps\n------------------------------")
-        print(f"USER DIRECTION:        {state.get('direction_azimuth', 0.0):.2f}")
-        print(f"USER ANGLE:            {state.get('direction_elevation', 0.0):.2f}")
+        print(f"USER DIRECTION:        {state.get('direction_azimuth', 0.0):.2f}")   #NEEDS GPS TO BE ENABLED TO RUN WITHOUT ERRORS
+        print(f"USER ANGLE:            {state.get('direction_elevation', 0.0):.2f}") #NEEDS GPS TO BE ENABLED TO RUN WITHOUT ERRORS
         print(f"NUMBER OF SATELLITES:  {state.get('gps_sats', 0.0):.2f}\n------------------------------")
     except RpcError as e:
         print(f"COMMUNICATION ERROR: {e}")
