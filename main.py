@@ -7,9 +7,9 @@ import sys
 #Prints Status
 def print_stats():
     try:   
-        #Update Info
-        status_data = starlink_grpc.status_data('192.168.100.1')
-        state = status_data.get('state', {})
+        #Updates Info
+        status = starlink_grpc.get_status('192.168.100.1')
+        state = status.get('state', {})
         info = status_data.get('device_info', {})
 
         #Prints Info
